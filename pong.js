@@ -35,3 +35,17 @@ function handleTouchMove(event) {
 function handleTouchEnd() {
   // Beende die Bewegung
 }
+
+const soundToggleButton = document.getElementById('soundToggle');
+let soundEnabled = true;
+
+soundToggleButton.addEventListener('click', () => {
+  soundEnabled = !soundEnabled;
+  soundToggleButton.textContent = `Sound: ${soundEnabled ? 'Ein' : 'Aus'}`;
+});
+
+function playHitSound() {
+  if (soundEnabled) {
+    hitSound.play();
+  }
+}
